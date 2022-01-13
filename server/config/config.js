@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { DB_HOST, DB_USERNAME, DB_PASSWORD } = process.env;
+const { DB_HOST, DB_USERNAME, DB_PASSWORD, JWT_SECRET, JWT_EXPIRES_IN } = process.env;
 
 module.exports = {
   "development": {
@@ -25,6 +25,10 @@ module.exports = {
     host: DB_HOST,
     dialect: "postgres",
     port: "5433",
-  }
+  },
+  jwtConfig: {
+    secret: JWT_SECRET,
+    expiresIn: JWT_EXPIRES_IN,
+  },
 };
 
