@@ -78,3 +78,8 @@ yarn db:g:seed sample-users
 13. Running Seeds
 
 yarn db:seeds
+
+14. Define Routes
+
+When a client sends request for an endpoint using HTTP request (GET, POST, PUT, DELETE), we need to determine how the server will reponse by setting up the routes.
+
