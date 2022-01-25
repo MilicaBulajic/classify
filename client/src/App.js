@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import { BrowserRouter, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import { Provider as UserProvider } from "./context/UserContext";
+import AllRoutes from "./components/AllRoutes";
 
 const App = () => {
 
   return (
     <UserProvider>
-      <BrowserRouter>
-        <Routes>
-        </Routes>
-      </BrowserRouter>
+      <Router>
+        <AllRoutes />
+      </Router>
     </UserProvider>
   );
 };
