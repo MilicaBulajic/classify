@@ -83,3 +83,10 @@ yarn db:seeds
 
 When a client sends request for an endpoint using HTTP request (GET, POST, PUT, DELETE), we need to determine how the server will reponse by setting up the routes.
 
+___________________________________________________________________
+
+1. Using the context in React requires 3 simple steps: creating the context, providing the context, and consuming the context.
+
+A. Creating the context is done in createDataContext file;
+B. Providing the context;
+C. Consuming the context.

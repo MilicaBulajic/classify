@@ -1,6 +1,8 @@
 import React, { useReducer } from "react";
 
+// eslint-disable-next-line import/no-anonymous-default-export 
 export default (reducer, actions, initialState) => {
+  //Creating the context
   const Context = React.createContext();
 
   const Provider = ({ children }) => {
@@ -12,6 +14,7 @@ export default (reducer, actions, initialState) => {
     }
 
     return (
+    //Providing the context
       <Context.Provider value={{ state, ...boundActions }}>
         {children}
       </Context.Provider>
