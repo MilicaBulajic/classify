@@ -1,20 +1,17 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import React from "react";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import LandingPage from "./pages/LandingPage";
 
-
 const PublicRoutes = () => {
-    return (
-        <>
-        <Router>
-            <Routes>
-                <Route exact path="/" component={LandingPage} />
-                <Route path="/login" component={LoginPage} />
-            </Routes> 
-        </Router> 
-        </>
-    );
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={LandingPage} />
+        <Route path="/login" component={LoginPage} />
+      </Switch>
+    </BrowserRouter>
+  );
 };
 
 export default PublicRoutes;

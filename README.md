@@ -90,3 +90,12 @@ ___________________________________________________________________
 A. Creating the context is done in createDataContext file;
 B. Providing the context;
 C. Consuming the context.
+
+___________________________________________________________________
+
+# Public Routes
+Public routes are Log in, SignUp, Forgot Password, Reset Password. In simple words, These routes can be accessed before login into the App.
+
+# Private Routes
+Private Routes - Dashboard, User Profile, App Settings, Home etc. In simple words, These routes can be accessed only after login.
+

@@ -4,7 +4,7 @@ const LandingPage = () => {
   return (
     <div>
       <div className="landing-container">
-        <div className="landing-nav-container"></div>
+        <div className="landing-nav-container">ff</div>
       </div>
     </div>
   );

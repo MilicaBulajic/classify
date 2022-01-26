@@ -6,24 +6,27 @@ const LoginForm = () => {
 
   const { login } = useContext(UserContext);
   const { register, handleSubmit, errors } = useForm();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <form onSubmit={handleSubmit(login)}>
       <div>
-        <label htmlFor="email">Email Address</label>
+        <label htmlFor="email">Email</label>
         <input
-          {...register("email", { required: true })}
+          {...register('email', { required: true })}
           name="email"
           type="email"
           placeholder="Email address"
         ></input>
-        {errors.email && errors.email.type === "required" && (
-          <span>This is required</span>
-        )}
       </div>
       <div>
         <label htmlFor="password">Password</label>
-        <input name="password" type="password" placeholder="password"></input>
+        <input
+          name="password"
+          type="password"
+          placeholder="password"
+        ></input>
       </div>
       <button type="submit">Login</button>
     </form>
