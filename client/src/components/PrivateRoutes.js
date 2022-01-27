@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-import Onboard from "./pages/Onboard";
+import OnboardPage from "./pages/OnboardPage";
 import HomePage from "./pages/HomePage";
 
 
