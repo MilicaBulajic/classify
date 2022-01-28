@@ -1,12 +1,10 @@
 import React from 'react';
-import { useForm } from "react-hook-form";
+import TeamForm from "../forms/TeamForm"
 
-const OnboardPage = (props) => {
-    const { register, handleSubmit, errors } = useForm();
-    
+const OnboardPage = () => {
     return (
         <div>
-            Welcome to Onboard, please choose the team!
+            <TeamForm />
         </div>
     );
 };

@@ -1,15 +1,33 @@
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Context as UserContext } from "../../context/UserContext";
+import UserContext from "../../context/UserContext";
+import apiServer from "../../service/apiServer";
 
 const RegisterForm = () => {
-  const { login } = useContext(UserContext);
+  const { setAuth, setEmail, setUserId } = useContext(UserContext);
   const { register, handleSubmit, errors } = useForm();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const onSubmit = async ({ name, email, password }) => {
+    try {
+      const res = await apiServer.post("/register", { name, email, password });
+      localStorage.setItem("onboard", res.data.token);
+      localStorage.setItem("email", res.data.email);
+      localStorage.setItem("userId", res.data.id);
+      window.location.href = "/register/onboard";
+      setErrorMessage("");
+
+      setEmail(res.data.email);
+      setUserId(res.data.id);
+    } catch (err) {
+      console.log(err.status);
+      setErrorMessage("Something went wrong with registering");
+    }
+  };
+
 
   return (
-    <form onSubmit={handleSubmit(login)}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div>
         <div>
           <label htmlFor="name"></label>

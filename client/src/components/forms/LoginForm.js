@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Context as UserContext } from "../../context/UserContext";
+import UserContext from "../../context/UserContext";
 
 const LoginForm = () => {
 
